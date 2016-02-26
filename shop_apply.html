@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>我要开店</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="apply">
+	<div class="box-wapper">
+		<form action="shop_apply_certify_company.html" method="post">
+			<!-- Main Begin -->   
+			<section class="box-main">
+				<!--  -->
+				<article class="panel-box panel-box-pad">
+					<div class="panel-row">
+						<div class="row-left row-left-name2">
+							<b class="name">店铺封面：</b>
+							<div class="file-btn file-btn-bg">
+								<div class="inner">
+									<img src="images/btn-upfile.png" alt="" class="btn-upfile">
+									<input type="file" name="upfile" class="file">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel-row">
+						<div class="row-left row-left-name2">
+							<b class="name">店铺名称：</b>
+							<input type="text" name="shopName" value="" placeholder="请输入店铺名称" class="input-unstyled">
+						</div>
+					</div>
+					<div class="panel-row">
+						<div class="row-left row-left-name2">
+							<b class="name">联系电话：</b>
+							<input type="text" name="mobile" value="" placeholder="请输入店铺联系电话" class="input-unstyled">
+						</div>
+					</div>
+				</article>
+				<!--  -->
+				<article class="panel-box panel-box-pad">
+					<a href="javascript:void(0)">
+						<div class="panel-row">
+							<div class="row-left row-left-name2"><b class="name">所在区域：</b>广东省 深圳市</div>
+							<div class="row-right"><i class="icon-angle-right"></i></div>
+						</div>
+					</a>
+					<div class="panel-row">
+						<div class="row-left row-left-name2">
+							<b class="name">详细地址：</b>
+							<input type="text" name="mobile" value="" placeholder="请输入地址" class="input-unstyled">
+						</div>
+					</div>
+					<a href="javascript:void(0)">
+						<div class="panel-row">
+							<div class="row-left row-left-name3"><b class="name">店铺地址定位：</b>&nbsp;</div>
+							<div class="row-right"><i class="icon-angle-right"></i></div>
+						</div>
+					</a>
+				</article>
+				<!--  -->
+				<article class="panel-box">
+					<div class="txtarea-box">
+						<b class="txtarea-box-title">公司简介：</b>
+						<!-- <textarea name="content" id="prief" cols="30" rows="4" class="txtarea-box-input" onfocus="javascript:if(this.value=='限定50字内'){this.value=''; }" onblur="javascript:if(!this.value){this.value='限定50字内';this.style.color = '#bababa';}" oninput="javascript:if(this.value=='限定50字内'){this.value=''; }this.style.color = '#6a6a6a';" style="color: #bababa;">限定50字内</textarea> -->
+						<textarea name="content" id="prief" cols="30" rows="4" class="txtarea-box-input" maxlength="50" placeholder="限定50字内"></textarea>
+					</div>
+				</article>
+			</section>
+			<!-- Main End -->
+			<!-- Footer Begin -->
+			<footer class="box-foot foot">
+				<div class="btn-buy btns-group clearfix">
+					<!-- <input type="submit" class="btn btns-lf" value="个人认证">
+					<i class="line"></i>
+					<input type="submit" class="btn btns-rt" value="企业认证"> -->
+					<a href="shop_apply_certify_personal.html" class="btn btns-lf">个人认证</a>
+					<input type="submit" class="btn btns-rt" value="企业认证">
+				</div>
+			</footer>
+			<!-- Footer End -->
+		</form>
+	</div>
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

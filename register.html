@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+	<title>注册</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="plugins/Validform/css/validform.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bg-grey">
+	<!-- main begin -->
+	<section class="main register">
+		<form action="" method="post" class="regForm" id="regForm">
+			<div class="wrap">
+				<div class="form-group">
+				    <label class="sr-only" for="mobile">手机号码：</label>
+				    <input type="text" name="mobile" id="mobile" class="form-control"  placeholder="请输入手机号码" datatype="m" nullmsg="手机号码不能为空！请重新输入" errormsg="手机格式不正确！" onkeyup="verifyable(this)">
+				</div>
+				<div class="form-group form-verify clearfix">
+				    <label class="sr-only" for="verify">验证码：</label>
+				    <input type="text" name="verify" id="verify" class="form-control pull-left" placeholder="请输入验证码" datatype="*" nullmsg="验证码不能为空！请重新输入">
+				    <button type="button" class="btn btn-grey pull-right" id="send_code" name="send_code" onClick="time();" disabled>获取验证码</button>
+				</div>
+				<div class="form-group">
+				    <label class="sr-only" for="password">密码：</label>
+				    <input type="password" name="password" id="password" class="form-control" placeholder="请输入6-20位数字、字母组合" datatype="s6-20" nullmsg="密码不能为空！请重新输入" errormsg="密码范围在6~20位之间！">
+				</div>
+				<div class="form-group">
+				    <label class="sr-only" for="password2">重复密码：</label>
+				    <input type="password" name="password2" id="password2" class="form-control" placeholder="请再次输入密码" datatype="*" recheck="password" nullmsg="重复密码不能为空！请重新输入" errormsg="两次输入的密码不一致！">
+				</div>
+				<input type="submit" value="注册" class="btn btn-red">
+			</div>
+		</form>
+	</section>
+	<!-- main end -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="plugins/Validform/js/Validform_v5.3.2.js"></script>
+    <script>
+	    //短信验证码发送 start
+	    var wait = 60; //时间 
+	    function time(o, p) { //o为按钮的对象，p为可选，这里是60秒过后，提示文字的改变
+	         var o=$("#send_code"); 
+	         if(wait == 0) {
+	            o.removeAttr("disabled").removeClass('btn-grey').addClass('btn-code');
+	            o.html("获取验证码"); //改变按钮中value的值 
+	            //p.html("如果您在1分钟内没有收到验证码，请检查您填写的手机号码是否正确或重新发送");
+	            wait = 60;
+	         }
+	         else {
+	            o.attr("disabled", true).removeClass('btn-code').addClass('btn-grey'); //倒计时过程中禁止点击按钮 
+	            o.text("（" + wait + "）"); //改变按钮中value的值 
+	            wait--;
+	            setTimeout(function () {
+	                  time(o, p); //循环调用 
+	            },1000)
+	         }
+	    }
+
+		//输入号码让验证码高亮并可点击
+	    function verifyable(ele) {
+	    	// alert(ele.value);
+	    	var mobile = ele.value;
+	    	var rule = /^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/i;
+	    	if(mobile != "" && rule.test(mobile)){
+	    		// $("#send_code").bind('click', verify_code);
+	    		$("#send_code").removeAttr("disabled").removeClass('btn-grey').addClass('btn-code');
+	    	}else{
+	    		// $("#send_code").unbind('click', verify_code)
+	    		$("#send_code").attr("disabled", true).removeClass('btn-code').addClass('btn-grey');
+	    	}
+	    }
+
+      	//表单验证
+		$("#regForm").Validform();
+
+    </script>
+</body>
+</html>

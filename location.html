@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>定位</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+      <link href="css/style.css" rel="stylesheet" type="text/css">
+      <!--[if lt IE 9]>
+         <script src="js/html5shiv.js"></script>
+         <script src="js/respond.min.js"></script>
+      <![endif]-->
+      <!--[if IE 7]>
+         <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+      <![endif]-->
+   </head>
+   <body class="position">
+      <!-- Header Begin -->
+      <header class="header bg-grey">
+        <div class="searchbar">
+          <form action="php/location.php" method="post" id="searchForm">
+            <div class="search-group">
+              <div class="search-input">
+                  <input type="text" class="form-control" placeholder="输入城市名或拼音查找" name="searchtxt" id="search" autoComplete="off">
+              </div>
+              <!-- <input type="submit" class="search-btn ic-search" value="搜索"> -->
+            </div>
+          </form>
+          <div class="search-result" id="searchResult"></div>
+        </div>
+      </header>
+      <!-- Header End -->
+      <!-- Main Begin -->
+      <section class="sec-result">
+          <!-- 当前定位城市 -->
+          <article class="pos">
+            <h5>深圳GPS定位</h5>
+            <div class="container-fluid">
+              <!-- 热门出发地 -->
+              <ul class="list-inline list-hot clearfix">
+                <li class="col-xs-4"><a href="index.html">北京</a></li>
+                <li class="col-xs-4"><a href="index.html">上海</a></li>
+                <li class="col-xs-4"><a href="index.html">天津</a></li>
+                <li class="col-xs-4"><a href="index.html">青岛</a></li>
+                <li class="col-xs-4"><a href="index.html">南京</a></li>
+                <li class="col-xs-4"><a href="index.html">杭州</a></li>
+              </ul>
+            </div>
+          </article>
+          <!-- 城市列表按字母排序 -->
+          <article class="list-main">
+            <h5 id="A">A</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">安山</a></li>
+              <li><a href="index.html">鞍山</a></li>
+              <li><a href="index.html">安阳</a></li>
+              <li><a href="index.html">阿里</a></li>
+              <li><a href="index.html">安康</a></li>
+              <li><a href="index.html">安顺</a></li>
+              <li><a href="index.html">澳门</a></li>
+            </ul>
+            <h5 id="B">B</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+              <li><a href="index.html">保亭</a></li>
+              <li><a href="index.html">巴冲</a></li>
+              <li><a href="index.html">北海</a></li>
+              <li><a href="index.html">北京</a></li>
+              <li><a href="index.html">本溪</a></li>
+              <li><a href="index.html">毕节</a></li>
+              <li><a href="index.html">滨州</a></li>
+            </ul>
+            <h5 id="C">C</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+              <li><a href="index.html">保亭</a></li>
+              <li><a href="index.html">巴冲</a></li>
+              <li><a href="index.html">北海</a></li>
+              <li><a href="index.html">北京</a></li>
+              <li><a href="index.html">本溪</a></li>
+              <li><a href="index.html">毕节</a></li>
+              <li><a href="index.html">滨州</a></li>
+            </ul>
+            <h5 id="D">D</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="E">E</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+            </ul>
+            <h5 id="F">F</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+            </ul>
+            <h5 id="G">G</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="H">H</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="I">I</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">保定</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="J">J</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">宝鸡</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="K">K</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="L">L</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="M">M</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+            </ul>
+            <h5 id="N">N</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="O">O</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">保山</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="P">P</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="Q">Q</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+            </ul>
+            <h5 id="R">R</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="S">S</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="T">T</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+            </ul>
+            <h5 id="U">U</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="V">V</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="W">W</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">包头</a></li>
+            </ul>
+            <h5 id="X">X</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">百色</a></li>
+            </ul>
+            <h5 id="Y">Y</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+            <h5 id="Z">Z</h5>
+            <ul class="list-unstyled list-city">
+              <li><a href="index.html">白城</a></li>
+              <li><a href="index.html">白沙</a></li>
+              <li><a href="index.html">白银</a></li>
+            </ul>
+          </article>
+      </section>
+      <!-- Main End -->
+      <!-- 右侧跳转 -->
+      <section class="sidebar" id="sidebar">
+        <ul class="list-unstyled list-letter">
+          <li><a data-target="#A">A</a></li>
+          <li><a data-target="#B">B</a></li>
+          <li><a data-target="#C">C</a></li>
+          <li><a data-target="#D">D</a></li>
+          <li><a data-target="#E">E</a></li>
+          <li><a data-target="#F">F</a></li>
+          <li><a data-target="#G">G</a></li>
+          <li><a data-target="#H">H</a></li>
+          <li><a data-target="#I">I</a></li>
+          <li><a data-target="#J">J</a></li>
+          <li><a data-target="#K">K</a></li>
+          <li><a data-target="#L">L</a></li>
+          <li><a data-target="#M">M</a></li>
+          <li><a data-target="#N">N</a></li>
+          <li><a data-target="#O">O</a></li>
+          <li><a data-target="#P">P</a></li>
+          <li><a data-target="#Q">Q</a></li>
+          <li><a data-target="#R">R</a></li>
+          <li><a data-target="#S">S</a></li>
+          <li><a data-target="#T">T</a></li>
+          <li><a data-target="#U">U</a></li>
+          <li><a data-target="#V">V</a></li>
+          <li><a data-target="#W">W</a></li>
+          <li><a data-target="#X">X</a></li>
+          <li><a data-target="#Y">Y</a></li>
+          <li><a data-target="#Z">Z</a></li>
+        </ul>
+      </section>
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <script>
+        $(function(){
+          var h_win = $("#sidebar").height();
+          var len = $("#sidebar li").length;
+          $("#sidebar li").height(h_win/len);
+
+          //点击跳转
+          var h_header = $(".searchbar").outerHeight();
+          $("#sidebar a").click(function(){
+              var tit = $(this).data('target');
+              var top = $(tit).offset().top - h_header;
+              $(window).scrollTop(top);
+          });
+
+          //输入搜索出结果
+          $("#search").keyup(function(){
+             var searchtxt = $("#search").val();
+             $.ajax({
+                url:'php/location.php',
+                type:'post',
+                dataType:'json',
+                data:'searchtxt='+searchtxt,
+                success:function(data){
+                  $("#searchResult").empty();
+                  console.log(data);
+                  if(data!=''){
+                    var layer;
+                    layer = "<ul class='list-unstyled'>";
+                    for(var i=0;i<data.length;i++){
+                      layer+= "<li data-id="+data[i]['id']+"><a href='index.html'>"+data[i]['name']+"</a></li>";
+                    }
+                    layer+="</ul>";
+                    $("#searchResult").show().append(layer);
+                  }else{
+                    $("#searchResult").hide();
+                  }
+                }
+            });
+          });
+
+          $("body").click(function(){
+            $("#searchResult").empty().hide();
+          })
+
+
+        })
+      </script>
+      
+   </body>
+</html>

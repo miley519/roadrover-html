@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>店铺管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="money">
+	<!-- Header Begin -->
+	<header class="header bg-red">
+		<div class="hd-title">账户余额</div>
+		<h1 class="hd-main">
+			<small>￥</small>10000.00
+		</h1>
+		<div class="hd-foot text-right">
+			<!-- 若未绑定银行卡 -->
+			<a href="shop_bankCard_bind.html" class="btn btn-dotted">提现</a>
+			<!-- 若已绑定银行卡 -->
+			<!-- <a href="shop-money-apply.html" class="btn btn-dotted">提现</a> -->
+		</div>
+	</header>
+	<!-- Header End -->
+	<!-- Main Begin -->   
+	<section>
+		<article class="panel-box panel-box-pad">
+			<div class="panel-row"><a href="shop_income_history.html">
+				<div class="row-left">
+					<p>累计收入</p>
+					<p class="red">￥10000.00</p>
+				</div>
+				<div class="row-right"><i class="icon-angle-right"></i></div></a>
+			</div>
+		</article>
+		<article class="panel-box panel-box-pad">
+			<div class="panel-row row-bank">
+				<div class="row-left">
+					平安银行
+				</div>
+				<div class="row-right"><i class="icon-remove"></i></div>
+			</div>
+		</article>
+	</section>
+	<!-- Main End -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

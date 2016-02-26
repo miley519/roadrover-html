@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>绑定银行卡</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bank">
+	<!-- Main Begin -->   
+	<section>
+		<article class="container">
+			<form action="" method="post" id="bankCardForm">
+				<p class="tip-top red">请保证姓名、身份证、银行卡开户人为同一人</p>
+				<div class="row bg-white">
+					<div class="form-main">
+						<div class="form-group">
+						    <label for="realName">真实姓名：</label>
+						    <div class="form-input"><input type="text" class="form-control must" name="realName" id="realName" value="" placeholder="张三"></div>
+						</div>
+						<div class="form-group">
+						    <label for="idCard">身份证号：</label>
+						    <div class="form-input"><input type="text" class="form-control must" name="idCard" id="idCard" value="" placeholder="请正确填写身份证号"></div>
+						</div>
+						<div class="form-group">
+						    <label for="bankName">开户银行：</label><input type="hidden"name="bankName" value="平安银行" class="must">
+						    <div class="form-input form-select"><a class="form-control" id="bankName" href="shop_select_bank.html">平安银行<i class="icon-angle-down"></i></a></div>
+						</div>
+						<div class="form-group">
+						    <label for="bankCard">银行卡号：</label>
+						    <div class="form-input"><input type="text" class="form-control must" name="bankCard" id="bankCard" value="" placeholder="请输入储蓄卡号"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form-btn">
+					<!-- 填写前 -->
+					<!-- <button type="button" class="btn btn-grey" id="btn">绑定银行卡</button> -->
+					<!-- 填写后 -->
+					<button type="submit" class="btn btn-grey">绑定银行卡</button>
+				</div>
+				<p class="tip-bot">
+					*注意：填写真实信息资料，才能提现仅支持储蓄卡，请不要填写信用卡
+				</p>
+			</form>
+		</article>
+	</section>
+	<!-- Main End -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    //当填入所有必要信息后让按钮颜色变成红色，否则为灰色
+    var isOk = false;
+    $("#bankCardForm").change(function(){
+    	var $must = $(".must");
+    	$must.each(function(index,element){
+    		if($(element).val()==""){
+    			isOk = false;
+    		}else{
+    			isOk = true;
+    		}
+    	})
+    	if(isOk){
+    		$("#btn").removeClass('btn-grey').addClass('btn-red');
+    	}else{
+    		$("#btn").removeClass('btn-red').addClass('btn-grey');
+    	}
+    })
+    </script>
+</body>
+</html>

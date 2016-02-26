@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>支付订单</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bg-white order-detail pay">
+	<div class="box-wapper">
+		<form action="pay_success.html" method="post">
+			<input type="hidden" name="price1" id="price1" value="316.00">
+			<input type="hidden" name="price2" id="price2" value="2.00">
+			<input type="hidden" name="price3" id="price3" value="">
+			<!-- Main Begin -->
+			<section class="box-main">
+				<article class="panel-box bg-grey pay-top">
+					<div class="wrap">
+						<div class="row-box">
+							<div class="row-item">
+								<div class="row-lf">订单名称：</div>
+								<div class="row-main">商品名2商品名2商品名2商品名2商品名2商品名2商品名2商品名2</div>
+							</div>
+						</div>
+					</div> 
+					<div class="wrap">
+						<div class="row-box">
+							<div class="row-item">
+								<div class="row-lf">订单总价：</div>
+								<div class="row-main red">￥316.00</div>
+							</div>
+						</div>
+					</div> 
+				</article>
+				<article class="panel-box">
+					<ul class="list-unstyled list-panel">
+						<li class="list-item" id="use-ticket">
+							<div class="panel-item choosed clearfix">
+								<div class="pull-left hd-lf">抵用券：</div>
+								<div class="hd-main red">￥2.00</div>
+								<div class="hd-rt-icon"><i class="icon-ok-sign"></i></div>
+							</div>
+						</li>
+						<li class="list-item">
+							<div class="panel-item clearfix">
+								<div class="pull-left hd-lf">还需支付：</div>
+								<div class="hd-main red" id="payPrice">￥314.00</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="list-unstyled list-pay" id="list-choice">
+						<input type="hidden" name="paytype" value="1" id="choice">
+						<li class="list-item" data-choice="11">
+							<div class="panel-row">
+								<div class="row-left row-left-icon"><i class="icon ic-weixin2"></i>微信支付</div>
+								<div class="row-right"><i class="choose icon-ok-sign"></i></div>
+							</div>
+						</li>
+						<li class="list-item" data-choice="14">
+							<div class="panel-row">
+								<div class="row-left row-left-icon"><i class="icon ic-baidu"></i>百度钱包</div>
+								<div class="row-right"><i class="choose icon-circle-blank"></i></div>
+							</div>
+						</li>
+						<li class="list-item" data-choice="18">
+							<div class="panel-row">
+								<div class="row-left row-left-icon"><i class="icon ic-yinlian"></i>银联支付</div>
+								<div class="row-right"><i class="choose icon-circle-blank"></i></div>
+							</div>
+						</li>
+					</ul> 
+				</article>
+			</section>
+			<!-- Main End -->
+			<!-- Footer Begin -->
+			<footer class="box-foot foot">
+				<div class="btn-buy">
+					<input type="submit" class="btn btn-rt" value="确认支付">
+				</div>
+			</footer>
+			<!-- Footer End -->
+		</form>
+	</div>
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

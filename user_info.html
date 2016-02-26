@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>个人中心-个人资料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="user-info">
+	<!-- Main Begin -->   
+	<section>
+		<article class="panel-box panel-box-pad">
+			<a href="#FileUploadModal" data-toggle="modal">
+				<div class="panel-row" id="fileUpload">
+					<div class="row-left row-left-name"><b class="name">头像</b><img src="images/upload/avatar.gif" alt="" class="avatar"></div>
+					<div class="row-right"><i class="icon-angle-right"></i></div>
+					<!-- <input type="file" name="avatar" id="uploadImg"> -->
+				</div>
+			</a>
+			<a href="user_info_edit.html">
+				<div class="panel-row">
+					<div class="row-left row-left-name"><b class="name">名称</b>过尽千帆皆不是</div>
+					<div class="row-right"><i class="icon-angle-right"></i></div>
+				</div>
+			</a>
+			<div class="panel-row">
+				<div class="row-left row-left-name"><b class="name">ID号</b>5655890423</div>
+			</div>
+			<div class="panel-row">
+				<div class="row-left row-left-name"><b class="name">手机</b>13510224221</div>
+			</div>
+		</article>
+	</section>
+	<!-- Main End -->
+	<!-- modal begin -->
+	<form id="upload_form" class="file-box" enctype="multipart/form-data" method="post" action="{:U('member/avatar_upload')}" onsubmit="return checkForm()">
+	<div class="modal fade in modal-bg" id="FileUploadModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">上传图片</h5>
+		  </div>
+	      <div class="modal-body">
+			<div class="avatar-box">
+			   <!-- <img id="preview" width="100%" class="preview"> -->
+			   <div id="result"></div>
+			   <!-- hidden crop params -->
+			   <input type="hidden" id="filewidth" name="filewidth" autocomplete="off"><!-- 原始宽度-->
+			   <input type="hidden" id="fileheight" name="fileheight" autocomplete="off"><!-- 原始高度-->
+			   <input type="hidden" id="wBox" name="wBox" autocomplete="off"><!-- 图片容器宽度 -->
+			   <input type="hidden" id="x1" name="x1" autocomplete="off"><!-- 裁切左上角横坐标 -->
+			   <input type="hidden" id="y1" name="y1" autocomplete="off"><!-- 裁切左上角纵坐标 -->
+			   <input type="hidden" id="x2" name="x2" autocomplete="off"><!-- 裁切右下角横坐标 -->
+			   <input type="hidden" id="y2" name="y2" autocomplete="off"><!-- 裁切右下角纵坐标 -->
+			   <input type="hidden" id="w" name="w" autocomplete="off"><!-- 裁切宽度-->
+			   <input type="hidden" id="h" name="h" autocomplete="off"><!-- 裁切高度-->
+			   <input type="hidden" id="saveto" name="saveto" value="forum">
+			   <input type="hidden" id="forfile" name="forfile" value="">
+			</div>
+			<div class="error"></div>
+	      </div>
+	      <div class="modal-footer clearfix">
+			<div class="pull-left" style="width: 80px;">
+			   <div class="camera-box">
+				<a class="icon-camera"></a>
+				<input type="file" name="image_file" id="image_file" class="file-avatar fileBox" onchange="fileSelectHandler(16,9,160,90)" />
+			   </div>
+			</div>
+			<div class="pull-right">
+				<input type="button" value="确定" class="btn btn-red btn-submit" id="subBtn" data-dismiss="modal">
+				<!--<button type="button" class="btn" data-dismiss="modal">取消</button>-->
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</form>
+	<!-- modal end -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

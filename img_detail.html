@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>车机安装详情图片集</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="plugins/swiper/css/swiper.min.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bg-dark">
+	<!-- Main Begin -->
+	<section class="sec-swipe">
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="images/upload/img-service1.png" alt="" width="100%"></div>
+	            <div class="swiper-slide"><img src="images/upload/img-service1.png" alt="" width="100%"></div>
+	            <div class="swiper-slide"><img src="images/upload/img-service1.png" alt="" width="100%"></div>
+	            <div class="swiper-slide"><img src="images/upload/img-service1.png" alt="" width="100%"></div>
+	            <div class="swiper-slide"><img src="images/upload/img-service1.png" alt="" width="100%"></div>
+	        </div>
+	        <div class="number clearfix">
+	        	<div class="pull-left"><div class="swiper-pagination"></div></div><div class="pull-left">/5</div>
+	        </div>
+	    </div>
+	    <!-- <div class="download clearfix"><span>1/5</span><a href="" class="pull-right btn-download"><img src="images/ic-download.png" alt="下载"></a></div> -->
+	    <div class="download"><a href="" class="pull-right btn-download"><img src="images/ic-download.png" alt="下载"></a></div>
+	</section>
+	<!-- Main End -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="plugins/swiper/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    	var swiper = new Swiper('.swiper-container', {
+		  pagination: '.swiper-pagination',
+		  paginationClickable: true,
+		  paginationBulletRender: function (index, className) {
+		      return '<span class="' + className + '">' + (index + 1) + '</span>';
+		  }
+		});
+    </script>
+</body>
+</html>

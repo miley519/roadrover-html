@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>车机安装详情</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body>
+	<div class="box-wapper">
+		<!-- Main Begin -->
+		<form action="buy_success.html" metho="post" id="buyForm">
+			<input type="hidden" name="price1" value="880.00" id="price1">
+			<input type="hidden" name="price2" value="880.00" id="price2">
+			<section class="box-main section sec-buy">
+				<article class="panel-white price">
+					<div class="wrap">
+						<div class="clearfix">
+							<span class="pull-left">车机安装</span>
+							<span class="pull-right red">￥880.00</span>
+						</div>
+						<div class="clearfix">
+							<span class="pull-left">数量</span>
+							<div class="pull-right">
+								<div class="num-group">
+									<a href="javascript:void(0)" class="num-btn num-minus">-</a>
+									<input type="text" value="2" class="num" id="num">
+									<a href="javascript:void(0)" class="num-btn num-plus">+</a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix">
+							<span class="pull-left">小计</span>
+							<span class="pull-right red" id="totalprice">￥880.00</span>
+						</div>
+					</div>
+				</article>
+				<article class="panel-white tip">
+					<div class="wrap">
+						预约成功后，服务商会在2小时之内与您联系，请保持手机通讯畅通。请在服务完成后进行支付！谢谢。
+					</div>
+				</article>
+				<article class="panel-box ticket">
+					<div class="wrap">
+						<a href="myticket_list.html">
+							<div class="panel-row panel-row-nobord">
+								<div class="row-left row-left-icon"><i class="icon ic-ticket"></i>优惠券</div>
+								<div class="row-right"><i class="icon-angle-right"></i></div>
+							</div>
+						</a>
+					</div>
+				</article>
+				<article class="panel-box receive">
+					<div class="wrap">
+						<div class="panel-row row-receive">
+							<div class="row-left row-left-icon"><i class="icon ic-receive"></i>收货信息</div>
+						</div>
+						<a href="javascript:void(0)">
+							<!-- 线下服务 -->
+							<div class="panel-row address">
+								<div class="row-left">线下服务</div>
+								<div class="row-right"><i class="icon-angle-right"></i></div>
+							</div>
+							<!-- 选择地址 -->
+							<!-- <div class="panel-row address">
+								<div class="row-left">
+									<p class="hd red clearfix"><span class="pull-left name">李娜</span><span class="pull-right mobile">13510124536</span></p>
+									<p class="bd">深圳市龙岗区雅园路万科第五园二期清辉府A栋</p>
+								</div>
+								<div class="row-right"><i class="icon-angle-right"></i></div>
+							</div> -->
+						</a>
+					</div>
+				</article>
+			</section>
+			<footer class="box-foot foot">
+				<div class="btn-buy">
+					<div class="box-lf">订单总计：<span class="red">￥5555.00</span></div>
+					<input type="submit" class="btn btn-rt" value="确认提交">
+				</div>
+			</footer>
+		</form>
+	</div>
+	<!-- Main End -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+	$(function(){
+		var num = $("#num").val();
+		calPrice(num);
+	})
+	function calPrice(num){
+		var price = $("#price1").val();
+		var totalprice = price*num;
+		totalprice = new Number(totalprice);
+		totalprice = totalprice.toFixed(2);
+		$("#price2").val(totalprice);
+		$("#totalprice").html("￥"+totalprice);
+	}
+	//数字增减js
+	$(".num-group").on("click",".num-minus",function(element){
+		var $num = $(this).parents(".num-group").find(".num");
+		var val = $num.val();
+		if(val<=1||isNaN(val)){
+			val = 1;
+		}else{
+			val--;
+		}
+		$num.val(val);
+		calPrice(val);
+	});
+	$(".num-group").on("click",".num-plus",function(element){
+		var $num = $(this).parents(".num-group").find(".num");
+		var val = Number($num.val());
+		if(isNaN(val)){
+			val = 1;
+		}else{
+			val++;
+		}
+		$num.val(val);
+		calPrice(val);
+	});
+	$(".num-group").on("keyup",".num",function(element){
+		var val = $(this).val();
+		if(isNaN(val)){
+			val = 1;
+			$(this).val(1);
+		}
+		calPrice(val);
+	});
+    </script>
+</body>
+</html>

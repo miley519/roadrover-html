@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+	<title>登录</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bg-grey modal-open">
+	<div class="box-wapper">
+		<!-- header begin -->
+		<header class="head">
+			<div class="head-bg"><img src="images/bg-top1.png" alt="" width="100%"></div>
+			<img src="images/logo.png" alt="logo" class="head-logo">
+		</header>
+		<!-- header end -->
+		<!-- main begin -->
+		<section class="box-main main login">
+			<form action="" method="post" class="form-inline" id="loginForm">
+				<div class="wrap-top">
+					<div class="form-group">
+					    <label for="username">账号：</label>
+					    <input type="text" name="username" id="username" class="form-control" placeholder="" datatype="*" nullmsg="请填写用户名！">
+					</div>
+					<div class="midline"></div>
+					<div class="form-group">
+					    <label for="password">密码：</label>
+					    <input type="password" name="password" id="password" class="form-control" placeholder="" datatype="*" nullmsg="请填写密码！" errormsg="用户名密码错误，请重新输入" >
+					</div>
+				</div>
+				<div class="wrap wrap-bot">
+					<input type="submit" value="登录" class="btn btn-grey">
+					<div class="clearfix">
+						<a href="register.html" class="pull-left">立即注册</a>
+						<a href="pwd_forget.html" class="pull-right">忘记密码？</a>
+					</div>
+				</div>
+			</form>
+		</section>
+		<!-- main end -->
+		<!-- footer begin -->
+		<footer class="box-foot foot">
+			<a href="" class="btn btn-white"><img src="images/ic-weixin.png" alt="" class="img-wx">微信登录</a>
+		</footer>
+		<!-- footer end -->
+	</div>
+	<!-- modal begin -->
+	<div class="modal fade in modal-bg" id="loginErrorModal" style="display:block;">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <p id="msg">账号或密码有误，请重新输入</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-red" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal-backdrop fade in"></div>
+	<!-- modal end -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(".modal .btn").click(function(event) {
+    	/* Act on the event */
+    	$("body").removeClass('modal-open');
+    	$(this).parents(".modal").hide();
+    	$(".modal-backdrop").hide();
+    });
+    </script>
+</body>
+</html>

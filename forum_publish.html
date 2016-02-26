@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/fix-foot.css">
+<title>发帖</title>
+</head>
+<body>
+	<div class="box-wapper">
+		<form action="forum.html" method="post">
+			<div class="box-main">
+				<input type="hidden" id="forum_cid" name="forum_cid" value="">
+				<div class="posting-base">
+					<div class="posting-base-clasify" data-toggle="modal" data-target="#categoryModal" style="display: block;
+cursor: pointer;">
+						<span id="catName">选择发布分类</span>
+						<span class="icon-angle-right"></span>
+					</div>
+					<div class="posting-base-title">
+						<span>标题：</span>
+						<input type="text" placeholder="请输入标题（15字内）">
+					</div>
+					<div class="posting-base-img">
+						<span>封面图：</span>
+						<!-- <a href="#"><input type="file"></a> -->
+						<a href="#FileUploadModal" data-toggle="modal" class="file-upload-btn" id="file-btn-0">
+						<img src="images/btn-upfile.png" width="60">
+						<input type="hidden" name="cover" value="">
+						</a>
+					</div>
+				</div>
+				<!-- 详情描述 -->
+				<div id="posting-content">
+					<div class="posting-wrap">
+						<div class="posting-detail">
+							<p>【详情描述】</p>
+							<textarea placeholder="这一刻的想法"></textarea>
+							<!-- <a href="#"><input type="file"></a> -->
+							<a href="#FileUploadModal" data-toggle="modal" class="file-upload-btn" id="file-btn-1">
+							<img src="images/btn-upfile.png" width="60">
+							<input type="hidden" name="photos[]" value=""></a>
+						</div>
+						<div class="find-addAndDel">
+							<a href="#" class="find-addDetail">添加图文描述</a>
+						</div>
+					</div>
+		        </div>
+				<!-- <div class="find-submit">
+					<input type="submit" value="发送">
+				</div> -->
+			</div>
+			<footer class="box-foot foot">
+				<div class="btn-buy">
+					<input type="submit" class="btn btn-rt" value="发送">
+				</div>
+			</footer>
+		</form>
+	</div>
+	<!-- modal begin -->
+	<div class="modal fade" id="categoryModal">
+		<div class="posting-guit">
+			<ul>
+				<li data-dismiss="modal" data-value="1">音箱改装</li>
+				<li data-dismiss="modal" data-value="2">安装技巧</li>
+				<li data-dismiss="modal" data-value="3">知识百科</li>
+				<li data-dismiss="modal" data-value="4">产品测评</li>
+			</ul>
+		</div>
+	</div>
+	<!-- modal end -->
+	<!-- modal begin -->
+	<form id="upload_form" class="file-box" enctype="multipart/form-data" method="post" action="{:U('member/avatar_upload')}" onsubmit="return checkForm()">
+	<div class="modal fade in modal-bg" id="FileUploadModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">上传图片</h5>
+		  </div>
+	      <div class="modal-body">
+			<div class="avatar-box">
+			   <!-- <img id="preview" width="100%" class="preview"> -->
+			   <div id="result"></div>
+			   <!-- hidden crop params -->
+			   <input type="hidden" id="filewidth" name="filewidth" autocomplete="off"><!-- 原始宽度-->
+			   <input type="hidden" id="fileheight" name="fileheight" autocomplete="off"><!-- 原始高度-->
+			   <input type="hidden" id="wBox" name="wBox" autocomplete="off"><!-- 图片容器宽度 -->
+			   <input type="hidden" id="x1" name="x1" autocomplete="off"><!-- 裁切左上角横坐标 -->
+			   <input type="hidden" id="y1" name="y1" autocomplete="off"><!-- 裁切左上角纵坐标 -->
+			   <input type="hidden" id="x2" name="x2" autocomplete="off"><!-- 裁切右下角横坐标 -->
+			   <input type="hidden" id="y2" name="y2" autocomplete="off"><!-- 裁切右下角纵坐标 -->
+			   <input type="hidden" id="w" name="w" autocomplete="off"><!-- 裁切宽度-->
+			   <input type="hidden" id="h" name="h" autocomplete="off"><!-- 裁切高度-->
+			   <input type="hidden" id="saveto" name="saveto" value="forum">
+			   <input type="hidden" id="forfile" name="forfile" value="">
+			</div>
+			<div class="error"></div>
+	      </div>
+	      <div class="modal-footer clearfix">
+			<div class="pull-left" style="width: 80px;">
+			   <div class="camera-box">
+				<a class="icon-camera"></a>
+				<input type="file" name="image_file" id="image_file" class="file-avatar fileBox" onchange="fileSelectHandler(16,9,160,90)" />
+			   </div>
+			</div>
+			<div class="pull-right">
+				<input type="button" value="确定" class="btn btn-red btn-submit" id="subBtn" data-dismiss="modal">
+				<!--<button type="button" class="btn" data-dismiss="modal">取消</button>-->
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</form>
+	<!-- modal end -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="plugins/jcrop/js/jquery.js"></script>
+	<script type="text/javascript" src="plugins/jcrop/js/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="plugins/jcrop/js/crop.js"></script>
+	<script>
+	//选择分类
+	$("#categoryModal li").each(function(index,element){
+		$(element).click(function(event) {
+			var html = $(element).html();
+			$("#catName").html(html);
+			
+			var forum_cid = $(element).data('value');
+			//console.log(forum_cid);
+			$("#forum_cid").val(forum_cid);
+		});
+	});
+	//添加新的描述
+	var count=1;
+	$("body").on('click','.find-addDetail',function(){
+		count++;
+		html = '<div class="posting-wrap">\
+			<div class="posting-detail">\
+				<p>【详情描述】</p>\
+				<textarea placeholder="这一刻的想法" name="desc[]"></textarea>\
+				<a href="#FileUploadModal" data-toggle="modal" class="file-upload-btn" id="file-btn-'+count+'">\
+				<img src="images/btn-upfile.png" width="60">\
+				<input type="hidden" name="photos[]" value=""></a>\
+				</a>\
+			</div>\
+			<div class="find-addAndDel">\
+				<a href="#" class="find-delDetail">删除</a>\
+				<a href="#" class="find-addDetail">添加图文描述</a>\
+			</div>\
+		</div>';
+		$("#posting-content").append(html);
+	});
+	
+	$("body").on('click','.find-delDetail',function(){
+		$(this).parents(".posting-wrap").remove();
+	})
+	
+	
+	$("body").on('click','.file-upload-btn',function(){
+		$("#result").html("").height("200px");
+		$("#forfile").val($(this).attr('id'));
+		//console.log($(this).index());
+		//console.log($(this).attr('id'));
+		//console.log($('.file-upload-btn').length);
+	})
+	</script>
+</body>
+</html>

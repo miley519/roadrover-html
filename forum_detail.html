@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<title>详情页</title>
+</head>
+<body>
+	<div class="bg-white detail-contop">
+		<div class="detail-img">
+			<img src="images/upload/img-service1.png">
+			<p class="detail-hit">宝马X5车身变成炭黑如何？</p>
+		</div>
+		<div class="detail-word">
+			<p class="detail-word-line"></p>
+			<p class="detail-word-user">张三丰</p>
+			<p>经过非常艰难的决定，还是选择了ta~!纠结了好久啊终于选定了！~经历过的都知道，这个过程非常非常非常非常的痛苦啊~！所以，大家帮忙看看怎么装比较好看？？改成炭黑色好不好呢？</p>
+			<img src="images/upload/img-service1.png">
+			<p>经过非常艰难的决定，还是选择了ta~!纠结了好久啊终于选定了！~经历过的都知道，这个过程非常非常非常非常的痛苦啊~！所以，大家帮忙看看怎么装比较好看？？改成炭黑色好不好呢？</p>
+			<img src="images/upload/img-service1.png">
+			<p>经过非常艰难的决定，还是选择了ta~!纠结了好久啊终于选定了！~经历过的都知道，这个过程非常非常非常非常的痛苦啊~！所以，大家帮忙看看怎么装比较好看？？改成炭黑色好不好呢？</p>
+			<img src="images/upload/img-service1.png">
+			<div class="detail-critic clearfix">
+				<div class="pull-left detail-critic-time">3天前</div>
+				<div class="pull-left detail-critic-a">
+					<div class="detail-critic-thumbs">
+						<i class="detail-critic-up"></i>
+						<span class="find-example-thumbsnum">15365</span>
+					</div>
+					<div class="detail-critic-thumbs">
+						<i class="detail-critic-critic"></i>
+						<span class="find-example-thumbsnum">122</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="detail-allcritic">
+		<h4>全部评论</h4>
+		<div class="comment-wrap">
+			<div class="detail-allcritic-user">
+				<div class="detail-allcritic-forus">
+					<img src="images/upload/shop-logo1.png" class="detail-allcritic-pic">
+					<span class="detail-allcritic-name">张三丰</span>
+				</div>
+				<div class="detail-allcritic-text">
+					<p class="cont">经过非常艰难的决定，还是选择了ta~!纠结了好久啊终于选定了！~经历过的都知道~！</p>
+					<p class="time">1分钟前</p>
+				</div>
+			</div>
+			<div class="detail-allcritic-user">
+				<div class="detail-allcritic-forus">
+					<img src="images/upload/shop-logo1.png" class="detail-allcritic-pic">
+					<span class="detail-allcritic-name">张三丰</span>
+				</div>
+				<div class="detail-allcritic-text">
+					<p class="cont">经过非常艰难的决定，还是选择了ta~!纠结了好久啊终于选定了！~经历过的都知道~！</p>
+					<p class="time">1分钟前</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="detail-footer" style="position:relative;">
+		<div class="great">
+			<span class="great-zan">赞</span>
+			<span class="great-num">999</span>
+		</div>
+		<div class="comment" id="comment" data-toggle="modal" data-target="#commentModal">
+			<span>评论</span>
+			<span>999</span>
+		</div>
+		<!-- <form action="" id="thisform" style="display:none; position:absolute;width:100%; bottom:0;z-index:99;">
+			<div class="left-input">
+				<input type="text" name="email" class="form-control">
+			</div>
+			<input type="submit" value="发送">
+		</form> -->
+	</div>
+	<!-- 评论弹出框 -->
+	<div class="modal fade" id="commentModal">
+	  <form action="" id="thisform" style="position:absolute;width:100%; bottom:0;z-index:99;">
+			<div class="left-input">
+				<input type="text" name="email" class="form-control">
+			</div>
+			<input type="submit" value="发送">
+		</form>
+	</div>
+	<!-- modal end -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script>
+	/*$("#comment").click(function(){
+		$("#thisform").show();
+
+	});
+	$("#sub").click(function(){
+		$("#thisform").hide();
+	})*/
+	//method.js
+	//分类栏显示
+	function clasifyguit(x,findUl){
+		console.log(x);
+		if(x==0)
+		{
+			findUl.style.display="block";
+			x=1;
+		}
+		else
+		{
+			findUl.style.display="none";
+			x=0;
+		}
+		return x;
+	}
+	function chooseli(li,reobj){
+		reobj.innerHTML=li.innerHTML;
+		li.parentNode.parentNode.style.display="none";
+		x=0;
+	}
+	function addDecription(){
+		
+	}
+	function delDecription(obj){
+		var pobj=obj.parentNode.parentNode
+		pobj.parentNode.removeChild(pobj);
+	}
+	</script>
+</body>
+</html>

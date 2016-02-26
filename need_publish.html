@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>发布新需求</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+	<style>
+	.list-files li{
+		margin-bottom: 4px;
+	}
+	</style>
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body>
+	<div class="box-wapper">
+		<form action="need_publish_success.html" metho="post" onsubmit="return checkForm()">
+			<!-- Main Begin -->
+			<section class="box-main main need">
+				<article class="panel-box panel-box-pad">
+					<a href="carModel_list.html">
+						<!-- 线下服务 -->
+						<div class="panel-row">
+							<div class="row-left row-left-name2">
+								<b class="name">安装车型</b>
+								<!-- 此处做判断来显示，若未选择，则加入lightgrey -->
+								<!-- <span class="lightgrey">请选择车型</span> -->    
+								<span>广汽丰田-第七代凯美瑞广汽丰田-第七代凯美瑞广汽丰田-第七代凯美瑞广汽丰田-第七代凯美瑞</span>
+								<input type="hidden" name="carType" value="" >
+							</div>
+							<div class="row-right"><i class="icon-angle-right"></i></div>
+						</div>
+					</a>
+					<a href="service_cat.html">
+						<div class="panel-row">
+							<div class="row-left row-left-name2"><b class="name">安装项目</b><input type="text" name="category" class="input-unstyled" value="车机安装"></div>
+							<div class="row-right"><i class="icon-angle-right"></i></div>
+						</div>
+					</a>
+					<a href="javascript:void(0)">
+						<div class="panel-row row-fee">
+							<div class="row-left">预算费用</div>
+							<div class="row-right"><input type="text" class="input-unstyled" name="fee" value="" placeholder="请输入你的预算费用"></div>
+						</div>
+					</a>
+				</article>
+				<article class="panel-white">
+					<div class="wrap">
+						<textarea name="" id="" cols="30" rows="5" class="input-unstyled" placeholder="请输入您要怎样的服务。。。（50字内）"></textarea>
+					</div>
+				</article>
+
+				<article class="panel-white file-box">
+					<div class="wrap">
+						<p>配几张图可能会更好的表达哦~（第一张图为封面图）</p>
+						<ul class="list-unstyled list-files clearfix" id="file-show">
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a880dac89b2.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a880e8ba801.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a880e12fd7f.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a881f742fce.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a881f0793d4.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a8820c3b7a8.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+							<li class="list-item">
+								<div class="item" style="background-image:url(images/upload/crop_56a881f742fce.jpg);">
+									<span class="close">&times;</span>
+								</div>
+							</li>
+						</ul>
+						<div class="file-btn">
+							<div class="inner">
+								<!-- <img src="images/btn-upfile.png" alt="" class="btn-upfile">
+								<input type="file" name="upfile" class="file"> -->
+								<a href="#FileUploadModal" data-toggle="modal" class="file-upload-btn" id="file-btn-0">
+								<img src="images/btn-upfile.png" class="btn-upfile">
+								<input type="hidden" name="count" value="" id="count">
+								</a>
+							</div>
+						</div>
+					</div>
+				</article>
+
+			</section>
+			<footer class="box-foot foot">
+				<div class="btn-buy">
+					<input type="submit" class="btn btn-rt" value="发布">
+				</div>
+			</footer>
+		</form>
+	</div>
+	<!-- Main End -->
+	<!-- modal begin -->
+	<form id="upload_form" class="file-box" enctype="multipart/form-data" method="post" action="{:U('member/avatar_upload')}" onsubmit="return checkForm()">
+	<div class="modal fade in modal-bg" id="FileUploadModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h5 class="modal-title">上传图片</h5>
+		  </div>
+	      <div class="modal-body">
+			<div class="avatar-box">
+			   <!-- <img id="preview" width="100%" class="preview"> -->
+			   <div id="result"></div>
+			   <!-- hidden crop params -->
+			   <input type="hidden" id="filewidth" name="filewidth" autocomplete="off"><!-- 原始宽度-->
+			   <input type="hidden" id="fileheight" name="fileheight" autocomplete="off"><!-- 原始高度-->
+			   <input type="hidden" id="wBox" name="wBox" autocomplete="off"><!-- 图片容器宽度 -->
+			   <input type="hidden" id="x1" name="x1" autocomplete="off"><!-- 裁切左上角横坐标 -->
+			   <input type="hidden" id="y1" name="y1" autocomplete="off"><!-- 裁切左上角纵坐标 -->
+			   <input type="hidden" id="x2" name="x2" autocomplete="off"><!-- 裁切右下角横坐标 -->
+			   <input type="hidden" id="y2" name="y2" autocomplete="off"><!-- 裁切右下角纵坐标 -->
+			   <input type="hidden" id="w" name="w" autocomplete="off"><!-- 裁切宽度-->
+			   <input type="hidden" id="h" name="h" autocomplete="off"><!-- 裁切高度-->
+			   <input type="hidden" id="saveto" name="saveto" value="forum">
+			   <input type="hidden" id="forfile" name="forfile" value="">
+			</div>
+			<div class="error"></div>
+	      </div>
+	      <div class="modal-footer clearfix">
+			<div class="pull-left" style="width: 80px;">
+			   <div class="camera-box">
+				<a class="icon-camera"></a>
+				<input type="file" name="image_file" id="image_file" class="file-avatar fileBox" onchange="fileSelectHandler(16,9,160,90)" />
+			   </div>
+			</div>
+			<div class="pull-right">
+				<input type="button" value="确定" class="btn btn-red btn-submit" id="subBtn" data-dismiss="modal">
+				<!--<button type="button" class="btn" data-dismiss="modal">取消</button>-->
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	</form>
+	<!-- modal end -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popwindow.js"></script>
+    <script>
+    	var has_photo = true;	//是否含有图片标识
+    	$(function(){
+    		//var w_img = $(".list-files .item").width();
+    		//$(".list-files .item").height(w_img);
+    		var w_img = parseInt($(".list-files").width()*0.2)-4;
+    		$(".list-files .item").height(w_img);			//此处需要动态添加
+
+    		//删除
+			$("#file-show").on('click','.close',function(){
+				$(this).parents(".list-item").remove();
+				var len=$("#file-show .list-item").length;
+				if(len==0){
+					has_photo = false;
+				}
+			});
+    	})
+    	function checkForm(){
+    		if(has_photo==false){
+    			show_window("请至少上传一张图片");
+    			return false;
+    		}
+    		return true;
+    	}
+    </script>
+</body>
+</html>

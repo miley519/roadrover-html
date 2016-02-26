@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>选择银行卡</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fix-foot.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body class="bank">
+	<div class="box-wapper">
+		<form action="shop_bankCard_bind.html" method="post" id="chooseForm">
+			<!-- Main Begin -->   
+			<section class="box-main">
+				<article class="bg-white art-bank">
+						<input type="hidden" value="1001" id="bank">
+						<ul class="list-unstyled list-common">
+							<li><a href="javascript:void(0)" class="choose" data-value="1001">中国工商银行</a></li>
+							<li><a href="javascript:void(0)" class="choose" data-value="1002">中国建设银行</a></li>
+							<li><a href="javascript:void(0)" class="choose" data-value="1003">中国农业银行</a></li>
+							<li><a href="javascript:void(0)" class="choose" data-value="1004">中国交通银行</a></li>
+							<li><a href="javascript:void(0)" class="choose" data-value="1005">招商银行</a></li>
+							<li><a href="javascript:void(0)" class="choose" data-value="1006">平安银行</a></li>
+						</ul>
+				</article>
+			</section>
+			<!-- Main End -->
+			<!-- Footer Begin -->
+			<footer class="box-foot foot">
+				<div class="btn-buy">
+					<input type="submit" class="btn btn-rt" value="保存">
+				</div>
+			</footer>
+			<!-- Footer End -->
+		</form>
+	</div>
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    	//选择某个选项
+    	$("#chooseForm").on('click','.choose',function(){
+    		var bank=$(this).data('value');
+    		console.log(bank);
+    		$("#bank").val(bank);
+    	})
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1 maximum-scale=1.0, user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>车机安装</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+  	<!--[if lt IE 9]>
+     	<script src="js/html5shiv.js"></script>
+     	<script src="js/respond.min.js"></script>
+  	<![endif]-->
+</head>
+<body>
+	<!-- Header Begin -->
+	<header class="header">
+		<div class="container-fluid topbar tabnav" id="accordion">
+			<!-- Nav tabs -->
+			<div class="row list-tabnav">
+				<a class="col-xs-4 item active" role="button" href="javascript:void(0)"><b>附近</b></a>
+				<a class="col-xs-4 item" role="button"  href="javascript:void(0)"><b>车型</b></a>
+				<a  class="col-xs-4 item" role="button" href="javascript:void(0)"><b>筛选</b></a>
+			</div>
+			<!-- Tab panes -->
+			<div class="content-subnav">
+				<!-- 附近下拉 -->
+				<div class="collapse" id="around">
+					<ul class="list-unstyled list-distance" role="tablist">
+					    <li class="active"><a href="#dis" role="tab" data-toggle="tab">附近</a></li>
+					    <li><a href="">南山区</a></li>
+					    <li><a href="">福田区</a></li>
+					    <li><a href="">罗湖区</a></li>
+					    <li><a href="">宝安区</a></li>
+					</ul>
+					<div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active" id="dis">
+					    	<ul class="list-unstyled list-distance">
+							    <li><a href="">附近（智能范围）</a></li>
+							    <li class="active"><a href="">500米</a></li>
+							    <li><a href="">1000米</a></li>
+							    <li><a href="">2000米</a></li>
+							    <li><a href="">3000米</a></li>
+							</ul>
+					    </div>
+					</div>
+				</div>
+				<!-- 车型下拉 -->
+				<div class="collapse" id="car" role="tabpanel">
+				    <ul id="topcar" class="list-unstyled list-car">
+				    	<li>
+				    		<dt>D</dt>
+				    		<dd data-id="1">大众</dd>
+				    	</li>
+				    	<li>
+				    		<dt>F</dt>
+				    		<dd data-id="2">丰田</dd>
+				    		<dd data-id="3">福特</dd>
+				    		<dd data-id="4">菲亚特</dd>
+				    	</li>
+				    	<li>
+				    		<dt>G</dt>
+				    		<dd data-id="5">大众</dd>
+				    	</li>
+				    	<li>
+				    		<dt>H</dt>
+				    		<dd data-id="6">丰田</dd>
+				    		<dd data-id="7">福特</dd>
+				    		<dd data-id="8">菲亚特</dd>
+				    	</li>
+				    	<li>
+				    		<dt>E</dt>
+				    		<dd data-id="9">大众</dd>
+				    	</li>
+				    	<li>
+				    		<dt>C</dt>
+				    		<dd data-id="10">丰田</dd>
+				    		<dd data-id="11">福特</dd>
+				    		<dd data-id="12">菲亚特</dd>
+				    	</li>
+				    </ul>
+				    <form action="service_list.html" method="post">
+				    	<input type="hidden" name="cartype" id="car_type" value="">
+				    	<div class="sublist" id="subcar">
+				    		<div class="choosed clearfix">
+				    			<strong class="name">丰田</strong>
+				    			<input type="submit" class="pull-right btn btn-dot" value="完成选择">
+				    		</div>
+				    		<div class="panel-blank-grey"></div>
+					    	<div class="bread"><small>广汽丰田</small></div>
+						    <ul class="list-unstyled list-subcar">
+						    	<li data-id="13"><span>第七代凯美瑞</span></li>
+						    	<li data-id="14"><span>凯美瑞.君瑞</span></li>
+						    	<li data-id="15"><span>凯美瑞.尊瑞</span></li>
+						    	<li data-id="16"><span>第六代凯美瑞</span></li>
+						    	<li data-id="17"><span>致炫</span></li>
+						    	<li data-id="18"><span>汉兰达</span></li>
+						    </ul>
+					    </div>
+						<!-- 选择生产年份 -->
+					    <div class="sublist list-choose">
+					    	<div class="choosed clearfix">
+					    		<strong class="name">广汽丰田——第七代凯美瑞</strong>
+					    		<input type="submit" class="pull-right btn btn-dot" value="完成选择">
+						    </div>
+				    		<div class="panel-blank-grey"></div>
+					    	<div class="bread"><small>选择生产年份</small></div>
+						    <ul class="list-unstyled list-subcar">
+						    	<li data-id="19"><span>2015年产</span></li>
+						    	<li data-id="20"><span>2014年产</span></li>
+						    	<li data-id="21"><span>2013年产</span></li>
+						    	<li data-id="22"><span>2012年产</span></li>
+						    </ul>
+					    </div>
+						<!-- 选择发动机排量 -->
+					    <div class="sublist list-choose">
+					    	<div class="choosed clearfix">
+					    		<strong class="name">广汽丰田——第七代凯美瑞</strong>
+					    		<input type="submit" class="pull-right btn btn-dot" value="完成选择">
+					    	</div>
+				    		<div class="panel-blank-grey"></div>
+					    	<div class="bread"><small>2015年产</small><i class="icon-caret-right"></i><small>选择发动机排量</small></div>
+						    <ul class="list-unstyled list-subcar">
+						    	<li data-id="23"><span>2.0L</span></li>
+						    	<li data-id="24"><span>3.0L</span></li>
+						    </ul>
+					    </div>
+						<!-- 选择车型 -->
+					    <div class="sublist list-choose">
+					    	<div class="choosed clearfix">
+					    		<strong class="name">广汽丰田——第七代凯美瑞</strong>
+					    		<input type="submit" class="pull-right btn btn-dot" value="完成选择">
+					    	</div>
+				    		<div class="panel-blank-grey"></div>
+					    	<div class="bread"><small>2015年产</small><i class="icon-caret-right"></i><small>2.0L</small><i class="icon-caret-right"></i><small>选择车型</small></div>
+						    <ul class="list-unstyled list-subcar">
+						    	<li data-id="25"><span>2015款2.0L首自一体 豪华版</span></li>
+						    	<li data-id="26"><span>2015款2.0L首自一体 精英版</span></li>
+						    	<li data-id="27"><span>2015款2.0L首自一体 领先版</span></li>
+						    </ul>
+					    </div>
+					</form>
+				</div>
+				<!-- 筛选下拉 -->
+				<div class="collapse" id="orderby" role="tabpanel">
+				    <ul class="list-unstyled list-orderby">
+				    	<li><a href="">离我最近</a></li>
+				    	<li><a href="">评价最好</a></li>
+				    	<li><a href="">价格由高到低</a></li>
+				    	<li><a href="">价格由低到高</a></li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Header End -->
+	<!-- Main Begin -->
+	<section id="main">
+		<!-- list -->
+		<article class="service">
+			<ul class="list-unstyled list list-panel">
+				<li class="list-item"><a href="service_detail.html">
+					<div class="list-head">
+						<div class="panel-item">
+							<div class="item-box item-box2">
+								<div class="box-lf"><img src="images/upload/shop-logo1.png" alt=""></div>
+								<div class="box-mid">
+									<h3 class="title">宝马NB维修店</h3>
+									<p class="desc"><small>专业改车18年，转改宝马</small></p>
+								</div>
+								<div class="box-rt"><span class="dot-box">17km以内</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="list-body">
+						<img src="images/upload/img-service1.png" alt="" width="100%">
+					</div>
+					<div class="list-foot">
+						<p class="time">一分钟前</p>
+					</div></a>
+				</li>
+				<li class="list-item"><a href="service_detail.html">
+					<div class="list-head">
+						<div class="panel-item">
+							<div class="item-box item-box2">
+								<div class="box-lf"><img src="images/upload/shop-logo1.png" alt=""></div>
+								<div class="box-mid">
+									<h3 class="title">宝马NB维修店</h3>
+									<p class="desc"><small>专业改车18年，转改宝马</small></p>
+								</div>
+								<div class="box-rt"><span class="dot-box">500M</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="list-body">
+						<img src="images/upload/img-service1.png" alt="" width="100%">
+					</div>
+					<div class="list-foot">
+						<p class="time">一分钟前</p>
+					</div></a>
+				</li>
+				<li class="list-item"><a href="service_detail.html">
+					<div class="list-head">
+						<div class="panel-item">
+							<div class="item-box item-box2">
+								<div class="box-lf"><img src="images/upload/shop-logo1.png" alt=""></div>
+								<div class="box-mid">
+									<h3 class="title">宝马NB维修店</h3>
+									<p class="desc"><small>专业改车18年，转改宝马</small></p>
+								</div>
+								<div class="box-rt"><span class="dot-box">500M</span></div>
+							</div>
+						</div>
+					</div>
+					<div class="list-body">
+						<img src="images/upload/img-service1.png" alt="" width="100%">
+					</div>
+					<div class="list-foot">
+						<p class="time">一分钟前</p>
+					</div></a>
+				</li>
+			</ul>
+		</article>
+	</section>
+	<!-- Main End -->
+	<!-- js  -->
+	<script src="js/jquery.min.js"></script>	
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>
